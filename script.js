@@ -3,7 +3,7 @@ var BRIDE = "Rita";
 var GROOM = "Mohammed Adel";
 var BRIDE_SHORT = "Rita";
 var GROOM_SHORT = "Mohammed Adel";
-var WEDDING = "2026-12-20T11:30:00+05:30"; /* Nikah */
+var WEDDING = "2026-12-22T11:30:00+05:30"; /* Reception */
 var DATE_TEXT = "";
 /* ====================== */
 (function(){
@@ -48,12 +48,12 @@ var DATE_TEXT = "";
     ["Su","Mo","Tu","We","Th","Fr","Sa"].forEach(function(d){H+='<div class="h">'+d+'</div>'});
     var first=new Date(2026,11,1).getDay(),n=31;
     for(var i=0;i<first;i++)H+='<div></div>';
-    for(var d=1;d<=n;d++)H+='<div><div class="x'+(d===20?' on':'')+'">'+d+'</div></div>';
+    for(var d=1;d<=n;d++)H+='<div><div class="x'+(d===22?' on':'')+'">'+d+'</div></div>';
     g.innerHTML=H;
     function gcal(title,start,end,loc){return "https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(title)+"&dates="+start+"/"+end+"&location="+encodeURIComponent(loc)}
-    document.getElementById("addcal").href=gcal("Nikah – "+names,"20261220T060000Z","20261220T070000Z","Cosmopolitan Convention Centre, Eriyad, Kodungallur");
+    document.getElementById("addcal").href=gcal("Reception – "+names,"20261222T060000Z","20261222T090000Z","Eventza Convention Centre, MDIT Engineering College Road, Ulliyeri, Kozhikode, Kerala 673323");
     document.getElementById("addrec").href=gcal("Reception – "+names,"20261222T060000Z","20261222T090000Z","Eventza Convention Centre, MDIT Engineering College Road, Ulliyeri, Kozhikode, Kerala 673323");
-    document.getElementById("adddisco").href=gcal("Disco Night – "+names,"20261218T113000Z","20261218T153000Z","Eventza Convention, Ulliyeri, Kozhikode");
+    document.getElementById("adddisco").href=gcal("Mehndi (Theme: Disco) – "+names,"20261218T113000Z","20261218T153000Z","Eventza Convention, Ulliyeri, Kozhikode");
     var c2=document.getElementById("cd2");
     function t2(){var d=new Date(WEDDING)-new Date();if(d<0)d=0;c2.innerHTML=Math.floor(d/864e5)+" days "+Math.floor(d/36e5)%24+" hours "+Math.floor(d/6e4)%60+" min <span class=\"sec\">"+Math.floor(d/1e3)%60+" sec</span>"}
     t2();setInterval(t2,1000);
